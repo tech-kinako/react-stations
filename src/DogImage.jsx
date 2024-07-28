@@ -6,7 +6,8 @@ export const DogImage = Props => {
       <img
         src={Props.imageUrl}
         alt="Dog image"
-        style={{ width: '500px', height: '500px' }}
+        style={{ width: '100%', height: '400px' }}
+        id="image"
       />
     </>
   )

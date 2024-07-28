@@ -1,3 +1,62 @@
 .header {
     background-color: #f5f5f5;
+    text-align: center;
+}
+
+#dog_image {
+    padding-bottom: 20px;
+    display:flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+
+#dog_image--description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+#description {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#dog_image--picture {
+    width: 40%;
+}
+
+#dog_image--container{
+    width: 70%;
+    margin: auto;
+}
+
+#dog_image--update-button {
+    text-align: end;
+}
+
+#dog_image--update-button button {
+    width: 60px;
+    height: 30px;
+    background-color: steelblue;
+    color: white;
+}
+
+#dogList_Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#select_description {
+    margin:30px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+select {
+    width: 500px;
+    height: 30px;
+    padding: 5px;
+    margin-right: 10px;
 }

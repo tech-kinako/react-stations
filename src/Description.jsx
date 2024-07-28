@@ -15,12 +15,18 @@ export const Description = () => {
 
   return (
     <>
-      <div id="description">
-        <p>犬の画像を表示するサイトです。</p>
-      </div>
-      <DogImage imageUrl={dogUrl} />
-      <div>
-        <button onClick={() => setImage()}>更新</button>
+      <div id="dog_image">
+        <div id="dog_image--description">
+          <p id="description">犬の画像を表示するサイトです。</p>
+        </div>
+        <div id="dog_image--picture">
+          <div id="dog_image--container">
+            <DogImage imageUrl={dogUrl} />
+            <div id="dog_image--update-button">
+              <button onClick={() => setImage()}>更新</button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )
