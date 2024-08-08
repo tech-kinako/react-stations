@@ -13,15 +13,45 @@ export const BreedsSelect = Props => {
     ))
   }
 
+  const getDogImage = async () => {
+    // if (Props.selectedBreeds !== 'select' || Props.selectedBreeds == '') {
+      const response = await fetch(
+        `https://dog.ceo/api/breed/${Props.selectedBreeds}/images/random/12`,
+      )
+      const data = await response.json()
+      const image = Object.values(data.message).map(value => value)
+      Props.setDogkindList(image)
+    // }
+  }
+
+  const viewDogKindList = () => {
+    console.log(Props.dogKindList.length)
+    if (Props.dogKindList.length > 1) {
+      return Props.dogKindList.map(image => (
+        <div key={image}>
+          <img
+            className="dog-image"
+            src={image}
+            alt=""
+            style={{ width: '400px', height: '300px' }}
+          />
+        </div>
+      ))
+    }
+  }
+
   return (
     <>
-      <p id="select_description">Breeds List</p>
-      <select value={Props.selectedBreeds} onChange={e => handleChange(e)}>
-        <option value="">
-          Select
-        </option>
-        {viewDogList()}
-      </select>
+      <div id="dog_list--container">
+        <p id="select--description">Breeds List</p>
+        <select value={Props.selectedBreeds} onChange={e => handleChange(e)}>
+          {viewDogList()}
+        </select>
+        <button id="view-button" onClick={() => getDogImage()}>
+          表示
+        </button>
+      </div>
+      <div id="dog_kind_List--container">{viewDogKindList()}</div>
     </>
   )
 }

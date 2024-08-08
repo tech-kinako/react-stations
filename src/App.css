@@ -42,13 +42,14 @@
     color: white;
 }
 
-#dogList_Container {
+#dog_list--container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
-#select_description {
+#select--description {
     margin:30px 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -59,4 +60,23 @@ select {
     height: 30px;
     padding: 5px;
     margin-right: 10px;
+}
+
+#view-button {
+    padding: 5px 60px;
+    margin-left: 30px;
+    background-color: steelblue;
+    color: white;
+}
+
+#dog_kind_List--container {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.dog-image {
+    width: 400px;
+    height: 300px;
 }

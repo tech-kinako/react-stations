@@ -5,7 +5,8 @@ import { BreedsSelect } from './BreedsSelect'
 
 export const DogListContainer = () => {
   const [breeds, setBreeds] = useState([''])
-  const [selectedBreeds, setSelectedBreeds] = useState()
+  const [selectedBreeds, setSelectedBreeds] = useState('')
+  const [dogKindList, setDogkindList] = useState([''])
   useEffect(() => {
     setDogList()
   }, [])
@@ -15,15 +16,18 @@ export const DogListContainer = () => {
     const data = await response.json()
     const dogList = Object.keys(data.message).map(key => key)
     setBreeds(dogList)
+    setSelectedBreeds(dogList[0])
   }
 
   return (
     <>
-      <div id="dogList_Container">
+      <div>
         <BreedsSelect
           breeds={breeds}
           setSelectedBreeds={setSelectedBreeds}
           selectedBreeds={selectedBreeds}
+          dogKindList={dogKindList}
+          setDogkindList={setDogkindList}
         />
       </div>
     </>
